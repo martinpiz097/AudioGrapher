@@ -10,12 +10,6 @@
             <file>file:/home/martin/Dropbox/Java/Proyectos/NetBeansProjects/BerryCloud/AudioAnalizer/src/org/analizer/sys/AudioAnalizer.java</file>
             <file>file:/home/martin/Dropbox/Java/Proyectos/NetBeansProjects/BerryCloud/AudioAnalizer/src/org/analizer/sys/Speaker.java</file>
         </group>
-        <group>
-            <file>file:/home/martin/Dropbox/Java/Proyectos/NetBeansProjects/BerryCloud/AudioAnalizer/src/org/analizer/sys/Microphone.java</file>
-            <file>file:/home/martin/Dropbox/Java/Proyectos/NetBeansProjects/BerryCloud/AudioAnalizer/src/org/analizer/sys/AudioAnalizer.java</file>
-            <file>file:/home/martin/Dropbox/Java/Proyectos/NetBeansProjects/BerryCloud/AudioAnalizer/src/org/analizer/sys/Grapher.java</file>
-            <file>file:/home/martin/Dropbox/Java/Proyectos/NetBeansProjects/BerryCloud/AudioAnalizer/src/org/analizer/sys/SysInfo.java</file>
-            <file>file:/home/martin/Dropbox/Java/Proyectos/NetBeansProjects/BerryCloud/AudioAnalizer/src/org/analizer/gui/FormAnalizer.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

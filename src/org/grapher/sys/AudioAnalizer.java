@@ -5,12 +5,13 @@
  */
 package org.grapher.sys;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.LineUnavailableException;
 import javax.swing.JPanel;
+import org.aucommon.sound.Microphone;
+import org.aucommon.sound.Speaker;
 import static org.grapher.sys.SysInfo.BUFF_SIZE;
 
 /**
@@ -70,28 +71,23 @@ public class AudioAnalizer extends Thread{
     public void run(){
         try {
             micro.open();
-            micro.start();
             speaker.open();
-            speaker.start();
-            
             grapher.start();
             byte[] audioBytes;
-            
-            while (true) {                
-                audioBytes = micro.read();
+            while (true) {
+                audioBytes = micro.readAudio(BUFF_SIZE);
                 listBytes.add(audioBytes);
-                speaker.write(audioBytes);
+                speaker.playAudio(audioBytes);
                 grapher.addBytes(audioBytes);
                 /*if (listBytes.size() >= 5000) {
-                    break;
+                break;
                 }*/
             }
             /*System.out.println("A escuchar");
             for (byte[] bytes : listBytes) {
-                speaker.write(bytes);
+            speaker.write(bytes);
             }
             System.exit(0);*/
-            
         } catch (LineUnavailableException ex) {
             Logger.getLogger(AudioAnalizer.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -6,7 +6,6 @@
 package org.grapher.sys;
 
 import java.awt.Color;
-import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.logging.Level;
@@ -32,7 +31,7 @@ public class Grapher extends Thread{
         this.audioButtons = new JButton[GRAPH_HEIGHT][BUFF_SIZE];
         queueBytes = new LinkedList<>();
         addButtons();
-        setPriority(NORM_PRIORITY);
+        setPriority(MAX_PRIORITY);
         audioPanel.setBackground(Color.BLACK);
     }
     
@@ -79,14 +78,8 @@ public class Grapher extends Thread{
     }
     
     public void drawSound(){
-        while (!queueBytes.isEmpty()){
-            try {
-                drawSound(queueBytes.pollLast());
-                Thread.sleep(10);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Grapher.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        while (!queueBytes.isEmpty())
+            drawSound(queueBytes.pollLast());
     }
     
     public void drawSound(byte[] audioBytes){
